@@ -12,11 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
         cell.setAttribute("data-clicked", "true");
         if(chance===true){
             cell.innerText="O";
+            cell.classList.add("o-player");
             arr[cellNumber]="O";
             checkWinner("O");
         }
         else{
             cell.innerText="X";
+            cell.classList.add("x-player");
             arr[cellNumber]="X";
             checkWinner("X");
         }
@@ -54,6 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cells.forEach(cell => {
             cell.innerText="";
             cell.removeAttribute("data-clicked");
+            cell.classList.remove("x-player", "o-player");
         });
         results.textContent = "";
         chance=false;
